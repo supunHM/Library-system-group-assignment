@@ -45,6 +45,10 @@ require_once("db-connection.php");
 
                         </div>
                         
+                            <button class="btn btn-primary btn-block" type="submit" name="update">Update</button>
+                       
+                            <button class="btn btn-primary btn-block" type="submit" name="save">Register Category</button>
+                        
                     </form>
                 </div>
             </div>
@@ -67,7 +71,17 @@ require_once("db-connection.php");
                         </thead>
                         <tbody>
                             <!-- Fetch and display book records dynamically here -->
-                            
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a href="books-registration.php?edit="><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                        <a href="books-registration-process.php?delete="><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                                    </div>
+                                </td>
+                            </tr>
                             
                         </tbody>
                     </table>
