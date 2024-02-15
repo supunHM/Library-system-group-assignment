@@ -25,4 +25,19 @@
     exit();
     }
 }
+
+if(isset($_GET['delete'])){
+    $cId = $_GET['delete'];
+
+    $sql = "DELETE FROM bookcategory WHERE category_id = '$cId'";
+
+    $conn->query($sql) or die($conn->error);
+
+    $_SESSION['message'] = "Record has been deleted!";
+    $_SESSION['msg_type'] = 'danger';
+
+    header("Location:feature3.php");
+
+}
+
 ?>

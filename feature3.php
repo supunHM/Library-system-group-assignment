@@ -94,8 +94,8 @@
                             <td><?php echo $row['date_modified'] ?></td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="book-category-registration.php?edit=? ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
-                                    <a href="book-category-process.php?delete=? ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                                    <a href="feature3.php?edit=?"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                    <a href="feature3-process.php?delete=<?php echo $row['category_id']; ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
                                 </div>
                             </td>
                         </tr>
