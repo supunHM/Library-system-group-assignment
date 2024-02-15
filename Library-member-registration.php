@@ -23,14 +23,6 @@ if ($conn->connect_error) {
 
 
 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -183,8 +175,6 @@ function deleteMember(member_id) {
 
 
 </script>
-
-
 
 
 
