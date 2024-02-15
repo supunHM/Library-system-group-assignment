@@ -1,12 +1,13 @@
 <?php
  require_once('db-connection.php');
+ require_once('feature3-process.php')
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Book-Category-Regi</title>
+    <title>Book-Category-Registration</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,10 +27,24 @@
             <div class="card">
                 <div class="card-header text-center bg-primary text-white">
                     <h3 class="mb-0">Category Registration</h3>
+                    <?php 
+                        if(isset($_SESSION['message'])):
+                     ?>
+                     <div style = "display: flex; top:30px;"  class="alert alert-<?php echo $_SESSION['msg_type']?> fade show alert-dismissible" role="alert">
+                        <?php
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                        unset($_SESSION['msg_type']);
+                        ?>
+                     <button type="button" class="close" data-dismiss="alert" >
+                        <span area-hidden="true">&times;</span>
+                    </button>
+                     </div>
+                     <?php endif ?>
                 </div>
 
                  <div class="card-body">
-                    <form action="" method="post">
+                    <form action="feature3-process.php" method="post">
                         <div class="form-group">
                             <label for="category_id">Category ID</label>
                             <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Enter category ID (e.g., C001)" required>
