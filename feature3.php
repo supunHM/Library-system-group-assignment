@@ -64,23 +64,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Fetch and display category records dynamically here -->
+                         <!-- Fetch and display category records dynamically here -->
+                         <?php 
                        
-                        
-                                        <tr>
-                                            <td>C001</td>
-                                            <td>Adventure</td>
-                                            <td>2024-02-14 21:14:07</td>
-                                            <td>
-                                                <div class="btn-group" role="group">
-                                                    <a href="book-category-registration.php?edit=? ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
-                                                    <a href="book-category-process.php?delete=? ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
-                                                </div>
-                                            </td>
-                                        </tr>
-                                       
-                            <!-- Example: -->
-                            
+                             $sql = "SELECT * FROM bookcategory";
+                             $result = $conn->query($sql);
+
+                            if($result->num_rows>0){
+                                while($row = $result->fetch_assoc()){
+                        ?>
+                        <tr>
+                            <td><?php echo $row['category_id'] ?></td>
+                            <td><?php echo $row['category_Name'] ?></td>
+                            <td><?php echo $row['date_modified'] ?></td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a href="book-category-registration.php?edit=? ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                    <a href="book-category-process.php?delete=? ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                                </div>
+                            </td>
+                        </tr>
+
+                        <?php
+                                  }
+                                }else{
+                                    echo "0 result";
+                                }
+                                $conn->close();
+
+                                   
+                            ?>
+
                         </tbody>
                     </table>
                 </div>
