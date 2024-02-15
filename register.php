@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     
-                    <form action="process.php" method="post">
+                    <form action="register_process.php" method="post">
                         <div class="form-group">
                             <label for="firstname">User ID</label>
                             <input type="text" id="firstname" name="userID" class="form-control" placeholder="User ID must be in the format 'U001'" required>
