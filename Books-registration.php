@@ -39,7 +39,9 @@ require_once("db-connection.php");
                         </div>
                         <div class="form-group">
                             <label for="book_category">Book Category</label>
-                               
+                            <select id="book_category" name="book_category" class="form-control" required>
+                                <option value="Novels">Novels</option>
+                            </select>
 
                         </div>
                         
