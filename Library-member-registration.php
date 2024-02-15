@@ -37,6 +37,99 @@ if ($conn->connect_error) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Form</title>
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #4caf50;
+    }
+
+    .container {
+        max-inline-size: 750px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    form {
+        margin-block-end: 20px;
+    }
+
+    label {
+        display: block;
+        margin-block-end: 8px;
+    }
+
+    input {
+        inline-size: 98%;
+        block-size: 25px;
+        padding-inline-start: 8px;
+        margin-block-end: 16px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    table {
+        inline-size: 100%;
+        border-collapse: collapse;
+        margin-block-start: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .edit,
+    .delete {
+        background-color: #2196F3;
+        color: #fff;
+        padding: 8px;
+        border: none;
+        /* Remove borders */
+        cursor: pointer;
+    }
+
+    .container-table {
+        max-inline-size: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
 </head>
 <body>
 <div class="container">
