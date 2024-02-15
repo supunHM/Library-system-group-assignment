@@ -1,3 +1,27 @@
+<?php
+
+require_once('db-connection.php');
+
+?>
+
+<?php 
+session_start();
+
+// Check for error message
+if(isset($_SESSION['message'])):
+?>_
+<div style = "display: flex; top:30px;"  class="alert alert-<?php echo $_SESSION['msg_type']?> fade show alert-dismissible" role="alert">
+    <?php
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+        unset($_SESSION['msg_type']);
+    ?>
+    <button type="button" class="close" data-dismiss="alert" >
+        <span area-hidden="true">&times;</span>
+    </button>
+</div>
+<?php endif;?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
