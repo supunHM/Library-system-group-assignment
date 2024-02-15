@@ -57,4 +57,18 @@ if(isset($_GET['edit'])){
     }
 }
 
+if(isset($_POST['update'])){
+    $cId = $_POST['category_id'];
+    $cName = $_POST['category_name'];
+    
+
+    $sql = "UPDATE bookcategory SET category_id='$cId',category_Name='$cName',date_modified=NOW() WHERE category_id='$cId';";
+    $conn->query($sql) or die($conn->error);
+
+    $_SESSION['message'] = "Record has been Updated!";
+    $_SESSION['msg_type'] = "warning";
+    header("Location:feature3.php");
+
+}
+
 ?>
