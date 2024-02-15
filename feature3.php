@@ -47,16 +47,17 @@
                     <form action="feature3-process.php" method="post">
                         <div class="form-group">
                             <label for="category_id">Category ID</label>
-                            <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Enter category ID (e.g., C001)" required>
+                            <input type="text" id="category_id" name="category_id" class="form-control" placeholder="Enter category ID (e.g., C001)" value="<?php echo $cId ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="category_name">Category Name</label>
-                            <input type="text" id="category_name" name="category_name" class="form-control" placeholder="Enter category name" required>
+                            <input type="text" id="category_name" name="category_name" class="form-control" placeholder="Enter category name" value="<?php echo $cName ?>" required>
                         </div>
-
+                        <?php if($update=="true"):  ?>
                         <button class="btn btn-primary btn-block" type="submit" name="update">Update</button>
-                       
+                        <?php else:?>
                         <button class="btn btn-primary btn-block" type="submit" name="save">Register Category</button>
+                        <?php endif; ?>
                     </form>
                 </div>
             </div>
@@ -94,7 +95,7 @@
                             <td><?php echo $row['date_modified'] ?></td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="feature3.php?edit=?"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                    <a href="feature3.php?edit=<?php echo $row['category_id']; ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
                                     <a href="feature3-process.php?delete=<?php echo $row['category_id']; ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
                                 </div>
                             </td>

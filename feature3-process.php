@@ -2,6 +2,10 @@
  require_once('db-connection.php');
  session_start();
 
+ $update = false;
+ $cId = "";
+ $cName = "";
+
  //Save data from form
  if(isset($_POST['save'])){
     $cId = $_POST['category_id'];
@@ -38,6 +42,19 @@ if(isset($_GET['delete'])){
 
     header("Location:feature3.php");
 
+}
+
+if(isset($_GET['edit'])){
+    $eId = $_GET['edit'];
+    $update = true;
+
+    $result = $conn->query("SELECT * FROM bookcategory WHERE category_id = '$eId'") or die($conn->error);
+
+    if(count(array($result))==1){
+        $row = $result->fetch_array() or die($conn->error);
+        $cId = $row['category_id'];
+        $cName = $row['category_Name'];
+    }
 }
 
 ?>
