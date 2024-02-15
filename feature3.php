@@ -47,6 +47,46 @@
             </div>
         </div>
 
+         <!-- Category Display Table -->
+         <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center bg-success text-white">
+                    <h3 class="mb-0">Category Records</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Category ID</th>
+                                <th>Category Name</th>
+                                <th>Date Modified</th>
+                                <th>Actions</th> <!-- Added column for actions -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Fetch and display category records dynamically here -->
+                       
+                        
+                                        <tr>
+                                            <td>C001</td>
+                                            <td>Adventure</td>
+                                            <td>2024-02-14 21:14:07</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <a href="book-category-registration.php?edit=? ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                                    <a href="book-category-process.php?delete=? ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                       
+                            <!-- Example: -->
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
