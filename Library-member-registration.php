@@ -1,4 +1,5 @@
 <?php
+require_once('navbar.php');
 // Start the session at the beginning of the file
 session_start();
 
