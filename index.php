@@ -22,6 +22,22 @@ if(isset($_POST['login'])){
         $_SESSION['msg_type'] = "danger";
     }
 }
+
+// Check for error message
+if(isset($_SESSION['message'])):
+    ?>
+    <div style="position: fixed; top: 30px; left: 50%; transform: translateX(-50%); z-index: 1000;" class="alert alert-<?php echo $_SESSION['msg_type']?> alert-dismissible fade show" role="alert">
+        <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            unset($_SESSION['msg_type']);
+        ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="position: absolute; top: 3px; left: 100px;">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <?php endif;?>
+    
 ?>
 
 <!DOCTYPE html>
