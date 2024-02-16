@@ -33,7 +33,7 @@
 
                 <div class="card text-white custom-dark-blue mx-5 mb-5" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center><a href="book-category-registration.php">Book Category Registration</a></center></h5>
+                      <h5 class="card-title"><center><a href="feature3.php">Book Category Registration</a></center></h5>
                       
                     </div>
                   </div>
