@@ -1,5 +1,6 @@
 <?php 
 require_once("db-connection.php");
+require_once("books-registration-process.php");
  
 ?>
 
@@ -71,11 +72,11 @@ require_once("db-connection.php");
                             
 
                         </div>
-                        
-                            <button class="btn btn-primary btn-block" type="submit" name="update">Update</button>
-                       
-                            <button class="btn btn-primary btn-block" type="submit" name="save">Register Category</button>
-                        
+                            
+                                <button class="btn btn-primary btn-block" type="submit" name="update">Update</button>
+                           
+                                <button class="btn btn-primary btn-block" type="submit" name="save">Register Category</button>
+                            
                     </form>
                 </div>
             </div>
