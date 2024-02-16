@@ -59,7 +59,7 @@ if(isset($_POST['save'])){
 
         $sql = "DELETE FROM book WHERE book_id = '$bId'";
 
-        $conn->query($sql) or die($con->error);
+        $conn->query($sql) or die($conn->error);
 
         $_SESSION['message'] = "Record has been deleted!";
         $_SESSION['msg_type'] = 'danger';
@@ -114,7 +114,7 @@ if(isset($_POST['save'])){
                 $_SESSION['message'] = "Record has been updated";
                 $_SESSION['msg_type'] = "success";
             } else {
-                $_SESSION['message'] = "Error: " . $con->error;
+                $_SESSION['message'] = "Error: " . $conn->error;
                 $_SESSION['msg_type'] = "danger";
             }
         } else {
@@ -126,4 +126,4 @@ if(isset($_POST['save'])){
     }
     
 
-    ?>
+?>

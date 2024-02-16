@@ -26,10 +26,23 @@ require_once("books-registration-process.php");
             <div class="card">
                 <div class="card-header text-center bg-primary text-white">
                     <h3 class="mb-0">Book Registration</h3>
-                    
+                    <?php
+                        if(isset($_SESSION['message'])):
+                    ?>
+                    <div style = "display: flex; top:30px;"  class="alert alert-<?php echo $_SESSION['msg_type']?> fade show alert-dismissible" role="alert">
+                        <?php
+                            echo $_SESSION['message'];
+                            unset($_SESSION['message']);
+                            unset($_SESSION['msg_type']);
+                            ?>
+                        <button type="button" class="close" data-dismiss="alert" >
+                            <span area-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <?php endif ?>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="books-registration-process.php" method="post">
                         <div class="form-group">
                             <label for="book_name">Book ID</label>
                             <input type="text" id="book_id" name="book_id" class="form-control" placeholder="Enter book ID (e.g., B001)"  value="<?php echo $bId ?>" required>
