@@ -71,17 +71,44 @@ require_once("db-connection.php");
                         </thead>
                         <tbody>
                             <!-- Fetch and display book records dynamically here -->
-                            <tr>
+                            <?php 
+                       
+                       $sql = "SELECT book.*, bookcategory.category_Name FROM book JOIN bookcategory ON book.category_id = bookcategory.category_id;";
+                       $result = $conn->query($sql);
+
+                      if($result->num_rows>0){
+                      while($row = $result->fetch_assoc()){
+                         ?>
+                      <tr>
+                          <td><?php echo $row['book_id'] ?></td>
+                          <td><?php echo $row['book_name'] ?></td>
+                          <td><?php echo $row['category_Name'] ?></td>
+                          <td>
+                              <div class="btn-group" role="group">
+                                  <a href="books-registration.php?edit=<?php echo $row['book_id']; ?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                  <a href="books-registration-process.php?delete=<?php echo $row['book_id']; ?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                              </div>
+                          </td>
+                      </tr>
+                      <?php
+                      }
+                  }else{
+                      echo "o result";
+                  }
+                  $conn->close();
+                      ?>
+
+                            <!-- <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <a href="books-registration.php?edit="><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
-                                        <a href="books-registration-process.php?delete="><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
-                                    </div>
+                                        <a href="books-registration.php?edit="><button class="btn btn-warning btn-sm">Edit</button></a> Update button -->
+                                        <!-- <a href="books-registration-process.php?delete="><button class="btn btn-danger btn-sm">Delete</button></a>  Delete button -->
+                                    <!-- </div>
                                 </td>
-                            </tr>
+                            </tr> --> 
                             
                         </tbody>
                     </table>
