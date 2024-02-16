@@ -78,13 +78,23 @@ require_once('db-connection.php');
                 <tbody>
                     <!-- Fetch and display borrow records dynamically here -->
                     
-                    
+                    <?php 
+                       
+                       $sql = "SELECT * FROM user";
+                       $result = $conn->query($sql);
+
+                       if($result->num_rows>0){
+                           while($row = $result->fetch_assoc()){
+                             ?>
+
                                 <tr>
-                                    <td>U001</td>
-                                    <td>K_Perera</td>
-                                    <td>Kamal</td>
-                                    <td>Perera</td>
-                                    <td>kamal@gmail.com</td>
+                                    <td><?php echo $row['user_id']?></td>
+                                    <td><?php echo $row['username']?></td>
+                                    <td><?php echo $row['first_name']?></td>
+                                    <td><?php echo $row['last_name']?></td>
+                                    <td><?php echo $row['email']?></td>
+
+
                                     <td>
                                         <div class="btn-group" role="group">
                                             <a href="userlist.php?edit="><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
@@ -92,7 +102,17 @@ require_once('db-connection.php');
                                         </div>
                                     </td>
                                 </tr>
-                            
+                                
+                            <?php
+                                    }
+
+                                }else{
+                                    echo "0 result";
+                                }
+                                $conn->close();
+
+                                   
+                            ?>
                 </tbody>
             </table>
         </div>
