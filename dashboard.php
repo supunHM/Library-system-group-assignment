@@ -26,35 +26,35 @@
             
               <div class="card text-white custom-dark-blue mt-4 mx-5 mb-5" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center>Registration</center></h5>
+                      <h5 class="card-title"><center><a href="books-registration.php">Books Registration</a></center></h5>
          
                     </div>
                   </div>
 
                 <div class="card text-white custom-dark-blue mx-5 mb-5" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center>Book Category Registration</center></h5>
+                      <h5 class="card-title"><center><a href="book-category-registration.php">Book Category Registration</a></center></h5>
                       
                     </div>
                   </div>
 
                   <div class="card text-white custom-dark-blue mx-5 mb-5" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center>Member Registration</center></h5>
+                      <h5 class="card-title"><center><a href="Library-member-registration.php">Member Registration</a></center></h5>
                      
                     </div>
                   </div>
 
                   <div class="card text-white custom-dark-blue mx-5 mb-5" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center>Book Borrow Details</center></h5>
+                      <h5 class="card-title"><center><a href="book_borrow.php">Book Borrow Details</a></center></h5>
                       
                     </div>
                   </div>
 
                   <div class="card text-white custom-dark-blue mx-5 mb-4" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center>User List</center></h5>
+                      <h5 class="card-title"><center><a href="userlist.php">User List</a></center></h5>
                     
                     </div>
                   </div>
