@@ -1,5 +1,6 @@
 <?php
 require_once('db-connection.php');
+require_once('userlist_process.php');
 ?>
 
 <!DOCTYPE html>
@@ -97,12 +98,12 @@ require_once('db-connection.php');
 
                                     <td>
                                         <div class="btn-group" role="group">
-                                            <a href="userlist.php?edit="><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
-                                            <a href="userlist_process.php?delete="><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
+                                            <a href="userlist.php?edit=<?php echo $row['user_id'];?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                            <a href="userlist_process.php?delete=<?php echo $row['user_id'];?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
                                         </div>
                                     </td>
                                 </tr>
-                                
+
                             <?php
                                     }
 
