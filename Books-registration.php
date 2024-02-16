@@ -72,11 +72,11 @@ require_once("books-registration-process.php");
                             
 
                         </div>
-                            
+                            <?php if($update=="true"):  ?>
                                 <button class="btn btn-primary btn-block" type="submit" name="update">Update</button>
-                           
+                            <?php else:?>
                                 <button class="btn btn-primary btn-block" type="submit" name="save">Register Category</button>
-                            
+                            <?php endif ?>
                     </form>
                 </div>
             </div>
