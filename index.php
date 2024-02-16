@@ -109,9 +109,11 @@ if(isset($_SESSION['message'])):
 <body> 
     <div class="login-container">
     <h2>Login</h2>
+    
     <?php if(isset($error)):?>
         <p><?php echo $error;?></p>
     <?php endif; ?>
+
     <form action="index.php" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
