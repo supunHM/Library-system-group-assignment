@@ -43,27 +43,27 @@ require_once('userlist_process.php');
             <form action="userlist_process.php" method="post">
                 <div class="form-group">
                     <label for="userId">User ID</label>
-                    <input type="text" id="userId" name="userId" class="form-control" placeholder="Enter user ID" value= "" required>
+                    <input type="text" id="userId" name="userId" class="form-control" placeholder="Enter user ID" value= "<?php echo $userId ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="userName">User Name</label>
-                    <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter user name" value="" required>
+                    <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter user name" value="<?php echo $userName ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter first name" value="" required>
+                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter first name" value="<?php echo $firstName ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter last name" value="" required>
+                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter last name" value="<?php echo $lastName ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter email address" value="" required>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter email address" value="<?php echo $email ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" value="" required>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" value="<?php echo $password ?>" required>
                 </div>
                 
 
@@ -111,7 +111,7 @@ require_once('userlist_process.php');
 
                                     <td>
                                         <div class="btn-group" role="group">
-                                            <a href="userlist.php?edit=<?php echo $row['user_id'];?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
+                                            <a href="user_list.php?edit=<?php echo $row['user_id'];?>"><button class="btn btn-warning btn-sm">Edit</button></a> <!-- Update button -->
                                             <a href="userlist_process.php?delete=<?php echo $row['user_id'];?>"><button class="btn btn-danger btn-sm">Delete</button></a> <!-- Delete button -->
                                         </div>
                                     </td>
