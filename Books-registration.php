@@ -1,6 +1,7 @@
 <?php 
 require_once("db-connection.php");
 require_once("books-registration-process.php");
+require_once("navbar.php");
  
 ?>
 
