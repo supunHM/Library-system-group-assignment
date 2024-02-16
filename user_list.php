@@ -23,7 +23,20 @@ require_once('userlist_process.php');
     <div class="card">
         <div class="card-header text-center bg-primary text-white">
             <h3 class="mb-0">Users List</h3>
-                    
+            <?php 
+                if(isset($_SESSION['message'])):
+            ?>
+                <div style = "display: flex; top:30px;"  class="alert alert-<?php echo $_SESSION['msg_type']?> fade show alert-dismissible" role="alert">
+            <?php
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                        unset($_SESSION['msg_type']);
+            ?>
+                <button type="button" class="close" data-dismiss="alert" >
+                        <span area-hidden="true">&times;</span>
+                </button>
+                </div>
+            <?php endif; ?>        
                      
         </div>
         <div class="card-body">
