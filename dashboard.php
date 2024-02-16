@@ -54,7 +54,7 @@
 
                   <div class="card text-white custom-dark-blue mx-5 mb-4" style="max-width: 19rem;">
                     <div class="card-body">
-                      <h5 class="card-title"><center><a href="userlist.php">User List</a></center></h5>
+                      <h5 class="card-title"><center><a href="user_list.php">User List</a></center></h5>
                     
                     </div>
                   </div>
