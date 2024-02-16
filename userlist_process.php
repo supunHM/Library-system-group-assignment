@@ -41,3 +41,23 @@ if(isset($_GET['edit'])){
 
     }
 }
+
+
+if(isset($_POST['update'])){
+    $userId = $_POST['userId'];
+    $userName = $_POST['userName'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
+    
+
+    $sql = "UPDATE user SET username='$userName', first_name='$firstName', last_name='$lastName', email='$email' WHERE user_id='$userId';";
+    $conn->query($sql) or die($conn->error);
+
+    $_SESSION['message'] = "Record has been Updated!";
+    $_SESSION['msg_type'] = "warning";
+    header("Location: user_list.php");
+
+}
+
+?>
