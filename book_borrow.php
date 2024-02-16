@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-    <a class="navbar-brand" href="user_dashboard.php">
+    <a class="navbar-brand" href="dashboard.php">
         <img src="lybraryC.png" alt="onlineImage">
     </a>
     <ul class="nav navbar-nav navbar-right">
