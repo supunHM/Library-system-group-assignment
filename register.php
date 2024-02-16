@@ -20,6 +20,7 @@ if(isset($_SESSION['message'])):
         <span area-hidden="true">&times;</span>
     </button>
 </div>
+
 <?php endif;?>
 
 <!DOCTYPE html>

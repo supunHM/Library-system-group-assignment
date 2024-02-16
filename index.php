@@ -1,3 +1,29 @@
+<?php
+session_start();    
+require_once('db-connection.php');
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $hashedPassword = sha1($password);
+    $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$hashedPassword'";
+    $result = $conn->query($sql);
+
+    if($result->num_rows >0){
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = true;
+        echo "Done";
+        header("Location:dashboard.php");
+        exit;
+
+    }else{
+        $_SESSION['message'] = "Invalid Username or Password";
+        $_SESSION['msg_type'] = "danger";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +100,7 @@
         <button type="submit" name="login">Login</button>
     </form>
     <div class="register-link">
-        <a href="#">Create an account</a>
+        <a href="register.php">Create an account</a>
     </div>
 </div>
 
