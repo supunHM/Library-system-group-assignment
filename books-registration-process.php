@@ -50,4 +50,24 @@ if(isset($_POST['save'])){
     }
 
 
+    if(isset($_GET['edit'])){
+        $eId = $_GET['edit'];
+        $update = true;
+    
+        // Fetch book details along with category name
+        $sql = "SELECT book.*, bookcategory.category_Name 
+                FROM book 
+                JOIN bookcategory ON book.category_id = bookcategory.category_id 
+                WHERE book.book_id = '$eId'";
+        $result = $conn->query($sql) or die($con->error);
+    
+        if($result && $result->num_rows == 1){
+            $row = $result->fetch_assoc();
+            $bId = $row['book_id'];
+            $bName = $row['book_name'];
+            $bCategory = $row['category_Name']; // Access category name from the fetched row
+
+        }
+    }
+
     ?>

@@ -32,11 +32,11 @@ require_once("books-registration-process.php");
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="book_name">Book ID</label>
-                            <input type="text" id="book_id" name="book_id" class="form-control" placeholder="Enter book ID (e.g., B001)"  value="" required>
+                            <input type="text" id="book_id" name="book_id" class="form-control" placeholder="Enter book ID (e.g., B001)"  value="<?php echo $bId ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="book_name">Book Name</label>
-                            <input type="text" id="book_name" name="book_name" class="form-control" placeholder="Enter book name"  value="" required>
+                            <input type="text" id="book_name" name="book_name" class="form-control" placeholder="Enter book name"  value="<?php echo $bName ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="book_category">Book Category</label>
