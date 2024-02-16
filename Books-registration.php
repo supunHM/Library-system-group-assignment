@@ -39,9 +39,36 @@ require_once("db-connection.php");
                         </div>
                         <div class="form-group">
                             <label for="book_category">Book Category</label>
-                            <select id="book_category" name="book_category" class="form-control" required>
-                                <option value="Novels">Novels</option>
-                            </select>
+
+                            <?php
+                                // Assuming $conn is your mysqli connection
+                                $sql = "SELECT category_Name FROM bookcategory";
+                                $result = $conn->query($sql);
+
+                                // Check if query was successful
+                                if($result) {
+                                    ?>
+                                    <select id="book_category" name="book_category" class="form-control" required>
+                                    <?php if($update==true):?>
+                                    <option value=""><?php echo $bCategory?></option>
+                                    <?php else:?>
+                                    <option value="">Select category</option>
+                                    <?php endif;?>
+
+                                    <?php
+
+                                    // Fetch data and populate the dropdown
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<option value="'.$row['category_Name'].'">'.$row['category_Name'].'</option>';
+                                    }
+                                    echo '</select>';
+                                } else {
+                                    // Handle query error
+                                    echo "Error: ".$conn->error;
+                                }
+                            ?>
+
+                            
 
                         </div>
                         
